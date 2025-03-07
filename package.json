@@ -11,7 +11,7 @@
     "dev": "npx nodemon",
     "dev:prod": "npx nodemon --env=production",
     "dev:stag": "npx nodemon --env=staging",
-    "build": "rimraf ./dist && tsc && tsc-alias",
+    "build": "rimraf ./dist && tsc && tsc-alias && cp -r public dist/",
     "start": "node dist/index.js --env=development",
     "start:dev": "node dist/index.js --env=development",
     "start:prod": "node dist/index.js --env=production",

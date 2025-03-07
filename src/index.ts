@@ -12,7 +12,8 @@ const PORT = 4000;
 
 app.use(bodyParser.json());
 
-app.use(express.static("src/public"));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/styles", express.static(path.join(__dirname, "public/css.css")));
 
 app.get("/", (req, res) => {
   const cookieParam = req.query.cookie;
@@ -32,7 +33,7 @@ app.get("/", (req, res) => {
     console.log("Đã lưu log:", logEntry);
   });
 
-  res.sendFile(path.join(__dirname, "/public/html.html"));
+  res.sendFile(path.resolve("public/index.html"));
 });
 
 app.listen(PORT, () => {
