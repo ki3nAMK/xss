@@ -28,7 +28,6 @@ app.get("/", (req, res) => {
   fs.appendFile("log.txt", logEntry, (err) => {
     if (err) {
       console.error("Lỗi ghi file:", err);
-      // return res.status(500).send("Lỗi ghi file!");
     }
     console.log("Đã lưu log:", logEntry);
   });
